@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #020817;
+  --primary: #0066ff;
+  --primary-hover: #0052cc;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply relative inline-block;
+  }
+  
+  .nav-link::after {
+    @apply content-[''] absolute left-0 -bottom-1 h-[2px] w-0 bg-primary 
+    transition-all duration-300;
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .mobile-menu-backdrop {
+    @apply bg-black/20 backdrop-blur-sm;
+  }
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+}
+
+.button-primary {
+  @apply px-6 py-3 rounded-lg bg-primary text-white font-medium
+    transition-all duration-300 hover:bg-primary-hover hover:shadow-md
+    active:scale-95;
+}
+
+.button-outline {
+  @apply px-6 py-3 rounded-lg border-2 border-primary text-primary font-medium
+    transition-all duration-300 hover:bg-primary hover:text-white hover:shadow-md
+    active:scale-95;
+}
