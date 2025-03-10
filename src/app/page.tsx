@@ -359,7 +359,7 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className="text-4xl md:text-5xl font-bold mb-4 text-gray-900"
             >
-              Top Brands We Deal With
+              Top Brands We Deal
             </motion.h2>
             <motion.div 
               initial={{ scaleX: 0 }}
