@@ -39,16 +39,16 @@ const menuVariants = {
     opacity: 0,
     x: "100%",
     transition: {
-      duration: 0.2
+      duration: 0.1
     }
   },
   open: {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.3,
-      staggerChildren: 0.1,
-      delayChildren: 0.2
+      duration: 0.15,
+      staggerChildren: 0.02,
+      delayChildren: 0.05
     }
   }
 };
@@ -204,13 +204,13 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.2 }}
             className="space-y-8"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.2 }}
             >
               <Image 
                 src="/RESCUELOGO.png" 
@@ -226,7 +226,7 @@ export default function Home() {
               className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
+              transition={{ delay: 0.05, duration: 0.2 }}
             >
               Your Trusted Partner in
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
@@ -238,7 +238,7 @@ export default function Home() {
               className="max-w-2xl mx-auto text-lg sm:text-xl text-gray-600"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
+              transition={{ delay: 0.1, duration: 0.2 }}
             >
               Delivering quality medical supplies and equipment to healthcare providers across the nation.
             </motion.p>
@@ -247,7 +247,7 @@ export default function Home() {
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
+              transition={{ delay: 0.15, duration: 0.2 }}
             >
               <button
                 onClick={() => scrollToSection("products")}
@@ -266,7 +266,7 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
+              transition={{ delay: 0.2, duration: 0.2 }}
               className="hero-stats"
             >
               <div className="flex justify-center items-center gap-8 md:gap-16">
@@ -291,18 +291,6 @@ export default function Home() {
                 ))}
               </div>
             </motion.div>
-
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ repeat: Infinity, duration: 2 }}
-              className="pt-12 opacity-60 cursor-pointer"
-              onClick={() => scrollToSection("products")}
-            >
-              <div className="text-gray-600 font-medium">Scroll to explore</div>
-              <div className="w-6 h-10 border-2 border-gray-400 rounded-full mx-auto mt-2 relative">
-                <div className="w-2 h-2 bg-gray-400 rounded-full mx-auto animate-bounce mt-2"></div>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -318,21 +306,21 @@ export default function Home() {
           >
             <h2 className="text-4xl font-bold mb-4">Our Product Categories</h2>
             <p className="text-gray-600 text-lg">
-              Explore our comprehensive range of medical supplies and equipment
+              Explore our comprehensive range of medical supplies and equipment.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mx-auto max-w-6xl">
-            {categories.map((category, index) => (
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 mx-auto max-w-6xl">
+            {categories.map((category) => (
               <motion.div
                 key={category.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
+                transition={{ duration: 0.2 }}
                 viewport={{ once: true, margin: "-50px" }}
                 className="category-card"
               >
-                <div className="icon group-hover:scale-110 transition-transform">
+                <div className="icon group-hover:scale-110 transition-transform duration-200">
                   {category.icon}
                 </div>
                 <h3 className="text-lg font-semibold">{category.name}</h3>
@@ -349,33 +337,33 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.2 }}
             className="text-center mb-16"
           >
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.2 }}
               className="text-4xl md:text-5xl font-bold mb-4 text-gray-900"
             >
-              Top Brands We Deal
+              Our Premium Brand Partners
             </motion.h2>
             <motion.div 
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.2 }}
               className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"
             ></motion.div>
             <motion.p 
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              transition={{ duration: 0.2 }}
               className="text-gray-600 text-lg max-w-2xl mx-auto"
             >
-              Partnering with leading healthcare brands to deliver quality medical supplies
+              Partnering with leading healthcare brands to deliver quality medical supplies.
             </motion.p>
           </motion.div>
 
@@ -392,16 +380,16 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.2 }}
                 className="w-full max-w-[180px] group"
               >
-                <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 h-24 flex items-center justify-center">
+                <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200 h-24 flex items-center justify-center">
                   <Image
                     src={brand.logo}
                     alt={`${brand.name} logo`}
-                    width={120}
-                    height={60}
-                    className="object-contain w-full h-full opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                    width={150}
+                    height={75}
+                    className="object-contain w-full h-full opacity-80 group-hover:opacity-100 transition-opacity duration-200"
                   />
                 </div>
               </motion.div>
@@ -677,7 +665,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-white p-6 rounded-xl border border-gray-100 hover:border-primary/20 transition-all duration-300"
+              className="bg-white p-6 rounded-xl border border-gray-100 hover:border-primary/20 transition-all duration-200"
             >
               <div className="bg-primary/5 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
                 <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -705,7 +693,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-white p-6 rounded-xl border border-gray-100 hover:border-primary/20 transition-all duration-300"
+              className="bg-white p-6 rounded-xl border border-gray-100 hover:border-primary/20 transition-all duration-200"
             >
               <div className="bg-primary/5 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
                 <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -726,7 +714,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="bg-white p-6 rounded-xl border border-gray-100 hover:border-primary/20 transition-all duration-300"
+              className="bg-white p-6 rounded-xl border border-gray-100 hover:border-primary/20 transition-all duration-200"
             >
               <div className="bg-primary/5 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
                 <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -747,7 +735,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="bg-white p-6 rounded-xl border border-gray-100 hover:border-primary/20 transition-all duration-300"
+              className="bg-white p-6 rounded-xl border border-gray-100 hover:border-primary/20 transition-all duration-200"
             >
               <div className="bg-primary/5 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
                 <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -755,7 +743,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Map</h3>
-              <div className="rounded-lg overflow-hidden shadow-sm hover:shadow transition-shadow duration-300">
+              <div className="rounded-lg overflow-hidden shadow-sm hover:shadow transition-shadow duration-200">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3898.1657746454847!2d76.6436163!3d12.3052693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf70127d8283e1%3A0x4c2b3188e6b3ed2e!2sRescue%20Pharma!5e0!3m2!1sen!2sin!4v1625641234567!5m2!1sen!2sin"
                   width="100%"
